@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='/stylesheets/style.css'>
+    <title>Title</title>
+</head>
+<body>
+<h1>Time Stamp Microservice</h1>
+<p>1. Timestamp Microservice: /timestamp</p>
+
+<h2>User stories:</h2>
+<ul>
+    <li>1) I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
+    <li>2) If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+    <li>3) If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+</ul>
+<h2>Example usage:</h2>
+<p>https://timestamp-ms.herokuapp.com/December%2015,%202015 <br/>
+https://timestamp-ms.herokuapp.com/1450137600 <br/></p>
+<h2>Example output:</h2>
+<p>{ "unix": 1450137600, "natural": "December 15, 2015" }</p>
+</body>
+</html>
