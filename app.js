@@ -5,13 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var useragent = require('express-useragent');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var timestamp = require('./routes/timestamp');
 var whoami = require('./routes/whoami');
+var shorten = require('./routes/shorten');
 
 var app = express();
+
+mongoose.connect('mongodb://jasenpan:jasenpan@ds037175.mlab.com:37175/shortenurl');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +34,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/timestamp', timestamp);
 app.use('/whoami', whoami);
+app.use('/shorten', shorten);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
